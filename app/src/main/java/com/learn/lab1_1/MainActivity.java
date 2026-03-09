@@ -52,8 +52,9 @@ public class MainActivity extends AppCompatActivity implements OnItemListener {
 
         adapter = new Adapter(this,catList);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
+        adapter.setListener(this);
 
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
         button.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this,MainActivity2.class);
             intent.putExtra("data",catList.get(2));

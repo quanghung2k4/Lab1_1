@@ -29,6 +29,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
     public void setListener(OnItemListener listener) {
         this.listener = listener;
+        notifyDataSetChanged();
     }
 
     @NonNull
